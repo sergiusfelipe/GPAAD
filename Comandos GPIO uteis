@@ -1,0 +1,42 @@
+Raspbian
+Configurações do Raspberry
+
+sudo raspi-config
+
+Editor de scrip
+sudo nano /caminho do arquivo
+
+Ver Endereço da rede
+ifconfig
+iwconfig
+
+Atualizar o raspberry
+sudo apt-get upgrade
+sudo apt-get update
+
+RPi.GPIO
+Importando
+import RPi.GPIO as gpio
+
+Declara o tipo de pinagem a ser utilizado
+gpio.setmode(board) #tipo board
+
+Declarando pinos tipo saída/entrada
+gpio.setup(pin, gpio.IN)
+gpio.setup(pin, gpio.OUT, initial=gpio.HIGH) #declarando saída e qual é o estado inicial do pino 
+gpio.setup(lista_pin, gpio.OUT) #declara uma lista inteira de pinos como saída
+
+Ler valaor do estado de umpino de entrada
+gpio.input(pin)
+
+Ler o valor dos estado de uma saída
+gpio.output(pin, state)
+
+Ao final de cada programa, dar o comando clean para não haver dano nos pinos
+gpio.cleanup()
+
+Criando um pino PWM
+p = gpio.PWM(pin, frequency)
+
+Começar
+p.start(dc) #onde dc é o duty cycle
